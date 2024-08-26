@@ -3,7 +3,7 @@ import { RocketContainer } from './containers/RocketContainer';
 import { MissionContainer } from './containers/MissionContainer';
 import { SearchField } from './components/SearchField';
 import { RocketType } from './components/Rocket';
-import { LaunchPadList } from './containers/LaunchPadList';
+import { LaunchPadContainer } from './containers/LaunchPadList';
 
 export default function IndexPage() {
   const [selectedRocket, setSelectedRocket] = useState<RocketType | null>(null);
@@ -25,7 +25,7 @@ export default function IndexPage() {
       </div>
 
       <div className='mb-8'>
-        <LaunchPadList/>
+        <LaunchPadContainer/>
       </div>
     </div>
   );
