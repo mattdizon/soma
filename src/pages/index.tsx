@@ -1,12 +1,16 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { RocketContainer } from './containers/RocketContainer';
 import { MissionContainer } from './containers/MissionContainer';
 import { SearchField } from './components/SearchField';
 import { RocketType } from './components/Rocket';
 import { LaunchPadContainer } from './containers/LaunchPadList';
+import Map  from './components/Map';
+import { LatLngExpression } from 'leaflet';
 
 export default function IndexPage() {
+  
   const [selectedRocket, setSelectedRocket] = useState<RocketType | null>(null);
+  const [launchpadCoordinates, setLaunchpadCoordinates] = useState< LatLngExpression | null>(null);
   const [filter, setFilter] = useState<string | null>(null);
 
   return (
@@ -25,7 +29,11 @@ export default function IndexPage() {
       </div>
 
       <div className='mb-8'>
-        <LaunchPadContainer/>
+        <LaunchPadContainer setLaunchpadCoordinates={setLaunchpadCoordinates}/>
+      </div>
+
+      <div>
+        <Map coordinates={launchpadCoordinates}/>
       </div>
     </div>
   );

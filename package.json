@@ -16,12 +16,15 @@
     "@trpc/react-query": "next",
     "@trpc/server": "next",
     "axios": "^1.7.5",
+    "leaflet": "^1.9.4",
     "next": "^14.2.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-leaflet": "^4.2.1",
     "zod": "^3.0.0"
   },
   "devDependencies": {
+    "@types/leaflet": "^1.9.12",
     "@types/node": "^20.10.0",
     "@types/react": "^18.3.1",
     "@types/react-dom": "^18.3.0",

@@ -14,9 +14,10 @@ export type LaunchPadType = {
     successful_launches: number;
     details: string;
 }
-export const LaunchPad = ({launchpad}: {launchpad: LaunchPadType}) => {
+export const LaunchPad = ({launchpad, setLaunchpadCoordinates}: {launchpad: LaunchPadType, setLaunchpadCoordinates: (coordinates: [number, number]) => void;}) => {
+    
     return (
-        <div key={launchpad.id} className="bg-white shadow-md rounded-lg p-6">
+        <div key={launchpad.id} className="bg-white shadow-md rounded-lg p-6" onClick={(() => setLaunchpadCoordinates([launchpad.location.latitude, launchpad.location.longitude]))}>
             <h2 className="text-xl font-semibold mb-2">{launchpad.full_name}</h2>
             <p className="text-gray-600 mb-4"><strong>Location:</strong> {launchpad.location.name}, {launchpad.location.region}</p>
             <p className="text-gray-600 mb-4"><strong>Status:</strong> {launchpad.status}</p>
