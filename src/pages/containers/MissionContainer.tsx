@@ -13,14 +13,18 @@ export const MissionContainer = ({
     const [limit] = useState(10); 
     const [offset, setOffset] = useState(0);
     
-    // Ensure that id is either a string or null
     const rocketId = selectedRocket?.rocket_id ?? null;
 
-    const { data: missionsData, isLoading: missionsIsLoading, error: missionsError } = trpc.getMissions.useQuery(
+    const { data: missionsData, isLoading: missionsIsLoading, error: missionsError, refetch } = trpc.getMissions.useQuery(
         { id: rocketId, limit, offset },
     );
     
     const [filteredMissions, setFilteredMissions] = useState(missionsData || []);
+
+    useEffect(() => {
+        setOffset(0);
+        refetch(); 
+    }, [selectedRocket, refetch]);
 
     useEffect(() => {
         if (missionsData) {
