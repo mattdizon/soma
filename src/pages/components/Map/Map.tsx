@@ -20,7 +20,6 @@ const DefaultIcon = L.icon({
 // Set the default icon globally for all markers
 L.Marker.prototype.options.icon = DefaultIcon;
 
-
 const RecenterMap = ({ center }: { center: LatLngExpression }) => {
   const map = useMap();
   map.setView(center); 
@@ -38,7 +37,7 @@ const MapComponent = ({ coordinates }: { coordinates: LatLngExpression | null })
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       />
       <Marker position={center}/>
-      <RecenterMap center={center} />  {/* Add this to handle map re-centering */}
+      <RecenterMap center={center} />
     </MapContainer>
   );
 };
