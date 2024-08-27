@@ -3,9 +3,9 @@ import { router } from '~/server/trpc';
 import { z } from 'zod';
 import { initTRPC } from '@trpc/server';
 import axios from 'axios';
-import { RocketType } from '~/pages/components/Rocket';
-import { MissionType } from '~/pages/components/MissionInfo';
-import { LaunchPadType } from '~/pages/components/LaunchPad';
+import { RocketType } from '~/components/Rocket';
+import { MissionType } from '~/components/MissionInfo';
+import { LaunchPadType } from '~/components/LaunchPad';
 
 const t = initTRPC.create();
 
