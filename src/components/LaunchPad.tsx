@@ -20,7 +20,7 @@ export const LaunchPad = ({launchpad, setLaunchpadCoordinates}: {launchpad: Laun
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
     return (
-        <div key={launchpad.id} className="bg-white shadow-md rounded-lg p-6" onClick={(onLaunchPadClick)}>
+        <div key={launchpad.id} className="bg-white shadow-md rounded-lg p-6  cursor-pointer" onClick={(onLaunchPadClick)}>
             <h2 className="text-xl font-semibold mb-2">{launchpad.full_name}</h2>
             <p className="text-gray-600 mb-4"><strong>Location:</strong> {launchpad.location.name}, {launchpad.location.region}</p>
             <p className="text-gray-600 mb-4"><strong>Status:</strong> {launchpad.status}</p>
