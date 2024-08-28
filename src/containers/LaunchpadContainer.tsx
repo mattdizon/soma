@@ -27,20 +27,21 @@ export default function LaunchPadPage() {
           Back to Rockets
         </button>
       </div>
-      
-      <div className="flex justify-between mb-8">
-        <div className="w-1/2 pr-4">
+
+      <div className="mb-8 flex justify-center items-center" style={{ height: '400px' }}>
+        <div className="w-full h-full justify-center flex">
           <Map coordinates={launchpadCoordinates} />
         </div>
-        <div className="w-1/2 pl-4">
-        <div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                {launchPads?.map((launchpad) => (
-                    <LaunchPad key={launchpad.id} launchpad={launchpad} setLaunchpadCoordinates={setLaunchpadCoordinates}/>
-                ))}
-            </div>
-        </div>
-        </div>
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {launchPads?.map((launchpad) => (
+          <LaunchPad
+            key={launchpad.id}
+            launchpad={launchpad}
+            setLaunchpadCoordinates={setLaunchpadCoordinates}
+          />
+        ))}
       </div>
     </div>
   );
